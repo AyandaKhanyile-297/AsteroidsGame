@@ -25,20 +25,20 @@ def log_state():
     _frame_count += 1
     if _frame_count % _FPS != 0:
         return
-	now = datetime.now()
- 	frame = inspect.currentframe()
-   	if frame is None:
+    now = datetime.now()
+    frame = inspect.currentframe()
+    if frame is None:
     	return
 
-  	frame_back = frame.f_back
-  	if frame_back is None:
+    frame_back = frame.f_back
+    if frame_back is None:
    		return
 
-  	local_vars = frame_back.f_locals.copy()
-   	screen_size = []
+    local_vars = frame_back.f_locals.copy()
+    screen_size = []
     game_state = {}
 
-	for key, value in local_vars.items():
+    for key, value in local_vars.items():
         if "pygame" in str(type(value)) and hasattr(value, "get_size"):
             screen_size = value.get_size()
 
@@ -94,7 +94,8 @@ def log_state():
                 sprite_info["rot"] = round(value.rotation, 2)
 
             game_state[key] = sprite_info
- 	entry = {
+
+    entry = {
         "timestamp": now.strftime("%H:%M:%S.%f")[:-3],
         "elapsed_s": math.floor((now - _start_time).total_seconds()),
         "frame": _frame_count,
