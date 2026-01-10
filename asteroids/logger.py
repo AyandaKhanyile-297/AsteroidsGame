@@ -19,8 +19,8 @@ def log_state():
     global _frame_count, _state_log_initialized
 
         # Stop logging after `_MAX_SECONDS` seconds
-            if _frame_count > _FPS * _MAX_SECONDS:
-                    return
+    if _frame_count > _FPS * _MAX_SECONDS:
+        return
 
                         # Take a snapshot approx. once per second
                             _frame_count += 1
