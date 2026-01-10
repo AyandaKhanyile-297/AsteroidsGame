@@ -11,8 +11,8 @@ def main():
 
     while True:
 		log_state()
-        screen.fill("black")
-        display.flip()
+		screen.fill("black")
+		display.flip()
 
 
 if __name__ == "__main__":
