@@ -1,4 +1,4 @@
-import circleshape
+from circleshape import *
 from constants import PLAYER_RADIUS, LINE_WIDTH
 
 class Player(CircleShape):
