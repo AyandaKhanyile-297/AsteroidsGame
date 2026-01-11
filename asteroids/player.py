@@ -1,7 +1,7 @@
-import circleshape
+from circleshape import *
 from constants import PLAYER_RADIUS, LINE_WIDTH
 
-class Player (Circleshape):
+class Player(Circleshape):
   def __init__(self, x, y):
     super().__init__(x, y, PLAYER_RADIUS)
     self.__rotation = 0
