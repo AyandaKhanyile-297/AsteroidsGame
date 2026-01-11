@@ -4,7 +4,7 @@ from constants import PLAYER_RADIUS, LINE_WIDTH
 class Player(CircleShape):
   def __init__(self, x, y):
     super().__init__(x, y, PLAYER_RADIUS)
-    self.__rotation = 0
+    self.rotation = 0
     
   # player is a circle but will be represented as a triangle
   def triangle(self):
