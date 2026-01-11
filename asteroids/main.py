@@ -15,8 +15,7 @@ def main():
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
     playerX = Player(x, y) 
-    print(type(obj))
-    
+
     while True:
         log_state()
         
