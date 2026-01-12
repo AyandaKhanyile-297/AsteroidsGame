@@ -26,9 +26,16 @@ class Player(CircleShape):
     keys = pygame.key.get_pressed()
     if keys[pygame.K_a]:
       # rotate left
-      rotate(-1*dt)
+      move(-1*dt)
     if keys[pygame.K_d]:
       # rotate right
+      move(dt)
+		
+	if keys[pygame.K_s]:
+      # rotate backwards 
+      rotate(-1*dt)
+    if keys[pygame.K_w]:
+      # rotate forwards
       rotate(dt)
 
 	def move(self, dt):
