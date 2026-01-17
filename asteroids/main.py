@@ -1,6 +1,7 @@
 import pygame
+import sys
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH
-from logger import log_state
+from logger import log_state, log_event
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
@@ -28,10 +29,17 @@ def main():
 
     while True:
         log_state()
-        
+        #quits game
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        #checks collisions
+        for asteroidX in asteroids:
+          collison = playerX.collides_with(asteroidX)
+          if collison:
+            log_event("player_hit")
+            print("Game over!")
+            sys.exit()
         
         screen.fill("black")
         updatable.update(dt)
